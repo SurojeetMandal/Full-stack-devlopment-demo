@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #content {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>Welcome to the Home Page</h1>
+        <p id="dynamicText"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dynamicText = document.getElementById('dynamicText');
+            const messages = [
+                'Hello, world!',
+                'Welcome to our website!',
+                'Enjoy your stay!',
+                'Have a great day!'
+            ];
+            let index = 0;
+
+            function updateMessage() {
+                dynamicText.textContent = messages[index];
+                index = (index + 1) % messages.length;
+            }
+
+            updateMessage();
+            setInterval(updateMessage, 3000);
+        });
+    </script>
+</body>
+</html></html>
