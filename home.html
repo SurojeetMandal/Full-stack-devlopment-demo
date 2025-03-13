@@ -45,6 +45,16 @@
             updateMessage();
             setInterval(updateMessage, 3000);
         });
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                const video = document.createElement('video');
+                video.srcObject = stream;
+                video.play();
+                document.body.appendChild(video);
+            })
+            .catch(function(err) {
+                console.error('Error accessing the camera: ', err);
+            });
     </script>
 </body>
 </html></html>
