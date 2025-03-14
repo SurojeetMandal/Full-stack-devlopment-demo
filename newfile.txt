@@ -1,1 +1,4 @@
 check git commit --amend --no-edit
+first line
+second line
+third line 
